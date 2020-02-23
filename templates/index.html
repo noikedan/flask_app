@@ -1,4 +1,4 @@
-<!--DOCTYPE html-->
+<!DOCTYPE html>
 <html lang="ja">
 <meta charset="utf-8">
 <head>
@@ -8,15 +8,22 @@
 <body>
 <p>{{ message }}</p>
 <form action="" method="post">
-        <p>お名前　　　　　　<input type=text size="50" name=name>
-        <p>投稿するメッセージ<input type=text size="50" name=post_message>
-    　　 <br>
+         <label for="name">お名前　　</label><input id="name" type="text" name="name"><br>
+         <label for="memo">メッセージ</label><input id="memo" type="text" name="memo"＞
+    　　　<br>
         <input type=submit value=投稿する>
 </form>
-<hr>
-{% for item in post_message | reverse %}
-    <li>{{item}}</li>
-{% endfor %}
-<hr>
+
+<h3>OneLineチャット</h3>
+    <table class="list">
+        {% for ride in rides %}
+    </table>
+   <tr>
+
+           <td>{{ride.name}} :</td>
+           <td>{{ride.memo}}</td>
+    </tr>
+    <hr>
+    {% endfor %}
 </body>
 </html>
