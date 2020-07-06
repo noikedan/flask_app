@@ -1,29 +1,14 @@
-<!DOCTYPE html>
-<html lang="ja">
-<meta charset="utf-8">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>簡易掲示板</title>
-</head>
-<body>
-<p>{{ message }}</p>
-<form action="" method="post">
-         <label for="name">お名前　　</label><input id="name" type="text" name="name"><br>
-         <label for="memo">メッセージ</label><input id="memo" type="text" name="memo"＞
-    　　　<br>
-        <input type=submit value=投稿する>
-</form>
-
-<h3>OneLineチャット</h3>
-    <table class="list">
-        {% for ride in rides %}
-    </table>
-   <tr>
-
-           <td>{{ride.name}} :</td>
-           <td>{{ride.memo}}</td>
-    </tr>
-    <hr>
-    {% endfor %}
-</body>
+<html>
+  <head>
+    <tilte>Insert文作成ツール</tilte>
+  </head>
+  <body>
+    <form method="post" action="/todos/uploader" enctype = "multipart/form-data">
+      <input type="file" name="file" />
+      <input type="submit" value="Create" />
+    </form>
+    <p>
+	<a href="{{ url_for('.download_file') }}">Download</a>
+    </p>
+  </body>
 </html>
